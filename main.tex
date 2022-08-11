@@ -1,0 +1,85 @@
+\documentclass[11pt, landscape, a4paper]{article}
+\usepackage{geometry}[landscape]
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{amsmath} 
+\usepackage{amssymb}
+
+\usepackage[dvipsnames]{xcolor}
+\usepackage{mathptmx}
+\usepackage[compact]{titlesec}
+\usepackage{paralist}
+
+\usepackage{tabularx}
+\usepackage{ctable}
+
+% Set page margins
+\geometry{top=.5cm, left=.5cm, right=.5cm, bottom=.5cm}
+
+% Set indentation
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0cm}
+
+% Set path for assets
+\graphicspath{{assets/}}
+
+\setlength{\columnsep}{5pt}
+\raggedcolumns
+
+% _____ CUSTOM COMMANDS __________________________________________
+\newcommand{\E}[0]{\mathbb{E}}
+\newcommand{\N}[0]{\mathbb{N}}
+\newcommand{\R}[0]{\mathbb{R}}
+
+\newcommand{\sgn}[0]{\text{sgn}}
+
+\newcommand{\argmin}[1]{\underset{#1}{\text{argmin}}}
+\newcommand{\argmax}[1]{\underset{#1}{\text{argmax}}}
+
+\titlespacing{\section}{0pt}{0.3ex}{0ex}
+\titlespacing{\subsection}{0pt}{0ex}{0ex}
+\linespread{0.7}
+
+\newcommand*{\myfont}{\fontfamily{phv}\selectfont}
+
+\titleformat*{\section}{\myfont\bfseries\color{Cyan}}
+\titleformat*{\subsection}{\myfont\bfseries\color{purple}}
+
+\begin{document}
+\begin{multicols*}{4}
+
+\setlength{\abovedisplayskip}{0pt}
+\setlength{\belowdisplayskip}{0pt}
+\setlength{\abovedisplayshortskip}{0pt}
+\setlength{\belowdisplayshortskip}{0pt}
+
+% _____ CONTENT __________________________________________________
+
+% main heading
+%\begin{center}
+%	\Large{\te xtbf{Introduction to ML}} \\
+%    \small{by dcamenisch}
+%\end{center}
+
+\input{chapters/model-error.tex}
+\input{chapters/regression.tex}
+\input{chapters/optimization.tex}
+\input{chapters/classification.tex}
+\input{chapters/kernels.tex}
+\input{chapters/other-nonlinear-methods.tex}
+\input{chapters/neural-networks.tex}
+\input{chapters/unsupervised-learning.tex}
+\input{chapters/statistical-perspective.tex}
+\input{chapters/bayesian-decision.tex}
+\input{chapters/generative-modeling.tex}
+\input{chapters/gaussian-mixture-model.tex}
+\input{chapters/generative-adversarial-networks.tex}
+\input{chapters/various.tex}
+
+\end{multicols*}
+\end{document}
+
+% ____ FOOTER ______________________________________________________
+% Content and Template: 
+% original by Danny Camenisch (dcamenisch@inf.ethz.ch), 2022
+% based on different summaries from many helpful people
