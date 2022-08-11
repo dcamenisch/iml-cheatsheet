@@ -25,7 +25,7 @@ Problems: labels if the model is uncertain, tries to extract too much inf. Works
 
 \textbf{E-Step}: calculate the cluster membership weights for each point: \\[-10pt]
 
-\qquad \qquad $\gamma_j^{(t)}(x_i) = \frac{w_j \cdot p(x_i ; \theta_j^{(t-1)})}{\sum_k w_k \cdot p(x_i ; \theta_k^{(t-1)})}$
+\quad $\gamma_j^{(t)}(x_i) = p(Z = j \; | \; D) =\frac{w_j \cdot p(x_i ; \theta_j^{(t-1)})}{\sum_k w_k \cdot p(x_i ; \theta_k^{(t-1)})}$
 		
 \textbf{M-Step}: compute MLE with closed form:
 

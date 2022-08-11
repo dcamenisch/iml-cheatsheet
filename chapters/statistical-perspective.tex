@@ -23,7 +23,8 @@ Assume Gaussian noise $y = f(x) + \epsilon$ with $\epsilon \sim \mathcal{N}(0, \
 \qquad \qquad $\hat p(y \; | \; x, \theta) = \mathcal{N}(y; w^\top x, \sigma^2)$
 
 The optimal $\hat w$ can be found using MLE:
-\qquad \qquad $$\hat w = \argmax{w} \; p(y | x, \theta) =\argmin{w} \sum_{i=1}^n (y_i - w^\top x_i)^2$$
+
+$\hat w = \argmax{w} \; p(y | x, \theta) =\argmin{w} \sum (y_i - w^\top x_i)^2$
 
 \subsection*{Maximum a Posteriori Estimate}
 

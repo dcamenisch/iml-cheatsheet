@@ -26,11 +26,14 @@ Find $k$ by negligible loss decrease or reg.
 
 \subsection*{Principal Component Analysis}
 
+Optimization goal:
+$\argmin{||w||_2 = 1, z} \sum_{i=1}^n ||x_i - z_i w||_2^2$
+
 The optimal solution is given by $z_i = w^\top x_i$.  
 
-Optimization goal:
+Substituting gives us:
 
-$\; \; \; \hat{w} = \argmin{||w||_2=1} \; \sum_{i=1}^n (w^\top x_i)^2 = \argmin{||w||_2=1} \; w^\top \Sigma w$
+\qquad \qquad $\hat{w} = \text{argmin}_{||w||_2=1} \; w^\top \Sigma w$
 
 Where $\Sigma = \frac{1}{n} \sum_{i=1}^n x_i x_i^\top$ is the empirical covariance. Closed form solution given by the principal eigenvector of $\Sigma$, i.e. $w = v_1$ for $\lambda_1 \geq ... \geq \lambda_d \geq 0$:
 $\Sigma = \sum_{i=1}^d \lambda_i v_i v_i^\top$
