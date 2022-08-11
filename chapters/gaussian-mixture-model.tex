@@ -56,7 +56,7 @@ Can be used for anomaly detection or data imputation. Detect outliers, by compar
 
 \subsection*{General EM Algorithm}
 
-\textbf{E-Step}: Take the expected value over latent variables to generate a likelihood function $Q$:
+\textbf{E-Step}: Take the expected value over latent variables $z$ to generate likelihood function $Q$:
 \begin{align*}
 	Q(\theta ; \theta^{(t-1)}) &= \E_{Z}[ \log  p(X, Z \; | \; \theta) \; | \; X, \theta^{(t-1)}] \\[-5pt]
 	&= \sum_{i=1}^n \sum_{z_i=1}^k \gamma_{z_i}(x_i) \log p(x_i, z_i \; | \; \theta)

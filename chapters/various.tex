@@ -10,4 +10,8 @@ $$p(y \; | \; x) = \frac{1}{p(x)} \underbrace{p(y) \cdot p(x \; | \; y)}_{p(x,y)
 
 \textbf{Normal Distribution}:
 
-\qquad \qquad $f(x) = \frac{1}{\sigma \sqrt{2}} \exp(-\frac{(x - \mu)^2}{\sigma^2})$
+$\mathcal{N}(x; \mu, \Sigma) = \frac{1}{\sqrt{(2 \pi)^d \text{det}(\Sigma)}} \exp(-\frac{(x - \mu)^\top \Sigma^{-1} (x-\mu)}{2})$
+
+\textbf{Other Facts}
+
+$\text{Tr}(AB) = \text{Tr}(BA)$, $\text{Var}(X) = \E[X^2] - \E[X]^2$, $X \in \mathbb{R}^{n \times d}: \; \; X^{-1} \rightarrow \mathcal{O}(d^3) \; X^\top X \rightarrow \mathcal{O}(nd^2)$
