@@ -4,9 +4,9 @@
 
 \qquad \qquad $\ell_{0-1}(\hat{f}(x), y) = \mathbb{I}_{y \neq \sgn \hat{f}(x)}$
 
-\textbf{Logistic loss} \quad $\log(1 + e^{y \hat{f}(x)})$
+\textbf{Logistic loss} \quad $\log(1 + e^{-y \hat{f}(x)})$
 
-\qquad \qquad $\nabla \ell(\hat{f}(x), y) = \frac{y_i x_i}{1 + e^{y_i \hat{f}(x)}}$
+\qquad \qquad $\nabla \ell(\hat{f}(x), y) = \frac{-y_i x_i}{1 + e^{y_i \hat{f}(x)}}$
 
 \textbf{Hinge loss} \quad \ $\max(0, 1-y \hat{f}(x))$
 

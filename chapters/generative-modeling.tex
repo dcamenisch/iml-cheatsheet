@@ -25,9 +25,9 @@ Where:\\[-10pt]
 Predictions are made by: \\[-20pt]
 $$y = \argmax{\hat y} \; p(\hat y \; | \; x) = \argmax{\hat y} \; p(\hat y) \cdot \prod_{i=1}^d p(x_i \; | \; \hat y)$$
 
-Equivalent to decision rule for bin. class.: \\[-10pt]
+Equivalent to decision rule for bin. class.: \\[-8pt]
 
-\qquad \qquad $y = \sgn ( \color{Red} \log \frac{p(Y = +1 \; | \; x)}{p(Y = -1 \; | \; x)} \color{Black})$ \\[-6pt]
+\qquad \qquad $y = \sgn \left( \color{Red} \log \frac{p(Y = +1 \; | \; x)}{p(Y = -1 \; | \; x)} \color{Black} \right)$ \\[-3pt]
 
 Where \color{Red}$f(x)$\color{Black} is called the discriminant function. If the conditional independence assumption is violated, the classifier can be overconfident.
 
