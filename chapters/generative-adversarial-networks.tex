@@ -9,7 +9,7 @@ Learn $f:$ "simple" distr. $\mapsto$ non linear distr. Computing likelihood of t
  Training requires finding a saddle point, always converges to saddle point with if G, D have enough capacity. For a fixed $G$, the optimal discriminator is:
  $$D_G(x) = \frac{p_{\text{data}}(x)}{p_{\text{data}}(x) + p_G(x)}$$
  
-The prob. of being real is $1 - D_G$. Too powerful discriminator could lead to memorization of finite data. Other issues are oscillations/divergence or mode collapse. \smallskip
+The prob. of being fake is $1 - D_G$. Too powerful discriminator could lead to memorization of finite data. Other issues are oscillations/divergence or mode collapse. \smallskip
  
 One possible performance metric:
 $$DG = \max_{w_D'} M(w_G, w_D') - \min_{w_G'} M(w_G', w_D)$$
