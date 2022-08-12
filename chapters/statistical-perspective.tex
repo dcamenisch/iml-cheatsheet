@@ -29,13 +29,15 @@ $\hat w = \argmax{w} \; p(y | x, \theta) =\argmin{w} \sum (y_i - w^\top x_i)^2$
 \subsection*{Maximum a Posteriori Estimate}
 
 Introduce bias to reduce variance. The small weight assumption is a Gaussian prior $w_i \sim \mathcal{N}(0, \beta^2)$. The posterior distribution of $w$ is given by:
-$p(w \; | \; x, y) = \frac{p(w) \cdot p( y \; | \; w, x)}{p( y \; | \; x)}$
+$p(w \; | \; x, y) = \frac{p(w) \cdot p( y \; | \; x, w)}{p( y \; | \; x)}$
 
 Now we want to find the MAP for $w$:
-\begin{align*}
-	\hat w &= \argmax{w} \; p(w \; | \; \bar x, \bar y) \\[-9pt]
-	&= \argmin{w} \; \frac{\sigma^2}{\beta^2} ||w||_2^2 + \sum_{i=1}^n(y_i - w^\top x_i)^2
-\end{align*}
+
+$\hat w = \text{argmax}_w \; p(w \; | \; \bar x, \bar y)$ \\[-8pt]
+
+\quad $= \text{argmin}_w - \log \frac{p(w) \cdot p( y \; | \; x, w)}{p( y \; | \; x)} $ \\[-8pt]
+
+\quad $= \text{argmin}_w \; \frac{\sigma^2}{\beta^2} ||w||_2^2 + \sum_{i=1}^n(y_i - w^\top x_i)^2$
 
 Regularization can be understood as MAP inference, with different priors (= regularizers) and likelihoods (= loss functions).
 

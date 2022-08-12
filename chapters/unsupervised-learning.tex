@@ -13,6 +13,8 @@ Init. cluster centers $\mu^{(0)}$:
 	\item Update $\mu_i$ as mean of assigned points
 \end{compactitem}
 
+Converges in exponential time.
+
 Initialize with \textbf{k-Means++}:
 
 \begin{compactitem}
@@ -21,7 +23,7 @@ Initialize with \textbf{k-Means++}:
 		$$\text{given } \mu_{1:j} \text{ pick } \mu_{j+1} = x_i$$ 
 		$\text{ where } p(i) = \frac{1}{z} \min_{l \in \{1,...,j\}} ||x_i - \mu_l||_2^2$
 \end{compactitem}
-
+Converges in expectation $\mathcal O (\log k) * \text{opt. solution}$.
 Find $k$ by negligible loss decrease or reg.
 
 \subsection*{Principal Component Analysis}
@@ -33,7 +35,7 @@ The optimal solution is given by $z_i = w^\top x_i$.
 
 Substituting gives us:
 
-\qquad \qquad $\hat{w} = \text{argmin}_{||w||_2=1} \; w^\top \Sigma w$
+\qquad \qquad $\hat{w} = \text{argmax}_{||w||_2=1} \; w^\top \Sigma w$
 
 Where $\Sigma = \frac{1}{n} \sum_{i=1}^n x_i x_i^\top$ is the empirical covariance. Closed form solution given by the principal eigenvector of $\Sigma$, i.e. $w = v_1$ for $\lambda_1 \geq ... \geq \lambda_d \geq 0$:
 $\Sigma = \sum_{i=1}^d \lambda_i v_i v_i^\top$
@@ -52,7 +54,7 @@ $\Sigma = \frac{1}{n} \sum_{i=1}^n x_i x_i^\top = X^\top X \Rightarrow$  kernel 
 
 Closed form solution:
 
-\qquad \qquad $\alpha^{(i)} = \frac{1}{\sqrt{\lambda_i}}v_i \quad K = \sum_{i = 1}^n \lambda_i v_i v_i^\top$\\[-6pt]
+$\alpha^{(i)} = \frac{1}{\sqrt{\lambda_i}}v_i \quad K = \sum_{i = 1}^n \lambda_i v_i v_i^\top, \lambda_1 \geq ... \geq 0$\\[-6pt]
 
 A point $x$ is projected as:
 $z_i = \sum_{j=1}^n \alpha_j^{(i)} k(x_j, x)$

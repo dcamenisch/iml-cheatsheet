@@ -6,7 +6,7 @@ $p(x  | \theta) = p(x  | \mu, \Sigma, w) = \sum_{j=1}^k w_j \mathcal{N}(x; \mu_j
 
 We don't have labels and want to cluster this data. The problem is to estimate the param. for the Gaussian distributions.
 
-\quad $\argmin{w, \mu, \Sigma} \; - \sum_{i=1}^n \log \sum_{j=1}^k w_j \cdot \mathcal{N}(x_i \; | \; \mu_j, \Sigma_j)$
+\ \ $\text{argmin}_{\theta} \; - \sum_{i=1}^n \log \sum_{j=1}^k w_j \cdot \mathcal{N}(x_i \; | \; \mu_j, \Sigma_j)$
 
 This is a non-convex objective. Similar to training a GBC without labels. Start with guess for our parameters, predict the unknown labels and then impute the missing data. Now we can get a closed form update.
 
@@ -23,7 +23,7 @@ Problems: labels if the model is uncertain, tries to extract too much inf. Works
 
 \subsection*{Soft-EM Algorithm}
 
-\textbf{E-Step}: calculate the cluster membership weights for each point: \\[-10pt]
+\textbf{E-Step}: calculate the cluster membership weights for each point ($w_j = \pi_j = p(Z = j))$: \\[-8pt]
 
 \quad $\gamma_j^{(t)}(x_i) = p(Z = j \; | \; D) =\frac{w_j \cdot p(x_i ; \theta_j^{(t-1)})}{\sum_k w_k \cdot p(x_i ; \theta_k^{(t-1)})}$
 		

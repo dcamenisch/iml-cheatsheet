@@ -10,7 +10,7 @@
 
 \textbf{Hinge loss} \quad \ $\max(0, 1-y \hat{f}(x))$
 
-\textbf{Softmax} \qquad $\mathbb{P}[y = +1 | x] = \frac{1}{1 + e^{- \hat{f}(x)}}$
+\textbf{Softmax} $p(1 | x) = \frac{1}{1 + e^{- \hat{f}(x)}}, p(-1 | x) = \frac{1}{1 + e^{\hat{f}(x)}}$ 
 
 Multi-Class \ \ \ $\hat{p}_k = e^{\hat{f}_k(x)} / \sum_{i=1}^K e^{\hat{f}_j(x)}$
 
@@ -30,7 +30,7 @@ Where $\text{margin} (w) = \min_i y_i w^\top x_i$.
 \qquad $\hat{w} = \min_w ||w||_2 \; \; \text{s.t. } \forall i \;y_i w^\top x_i \geq 1$
  
 \textbf{Soft SVM} \quad allow "slack" in the constraints
-$$\hat{w} = \min_{w, \xi} \frac{1}{2} ||w||_2^2 + \lambda \sum_{i=1}^n \max (0, 1 - y_i w^\top x_i)$$
+$$\hat{w} = \min_{w, \xi} \frac{1}{2} ||w||_2^2 + \lambda \sum_{i=1}^n \underbrace{\max (0, 1 - y_i w^\top x_i)}_{\text{hinge loss}}$$ \\[-23pt]
 
 \subsection*{Metrics} 
 Choose $+1$ as the more important class. \\[-18pt]
@@ -44,11 +44,12 @@ Choose $+1$ as the more important class. \\[-18pt]
 	$\text{error}_2 / \text{FNR}: \frac{\text{FN}}{\text{TP + FN}}$
 	$\text{Precision}: \frac{\text{TP}}{\text{TP + FP}}$
 	$\text{TPR / Recall}: \frac{\text{TP}}{\text{TP + FN}}$
-	
 \end{multicols*}
 
 .\\[-20pt]
 \textbf{AUROC}: Plot TPR vs. FPR and compare different ROC's with area under the curve.
 
-\textbf{F1-Score}: $\frac{2\text{TP}}{2\text{TP + FP + FN}}$ $\text{Accuracy}: \frac{\text{TP + TN}}{\text{P + N}}$
+\textbf{F1-Score}: $\frac{2\text{TP}}{2\text{TP + FP + FN}}$, $\text{Accuracy}: \frac{\text{TP + TN}}{\text{P + N}}$
+
+Goal: large recall and small FPR.
   
