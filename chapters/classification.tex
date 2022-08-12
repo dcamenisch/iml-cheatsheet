@@ -8,23 +8,21 @@
 
 \qquad \qquad $\nabla \ell(\hat{f}(x), y) = \frac{y_i x_i}{1 + e^{y_i \hat{f}(x)}}$
 
-\textbf{Hinge loss} \quad $\max(0, 1-y \hat{f}(x))$ \smallskip
+\textbf{Hinge loss} \quad \ $\max(0, 1-y \hat{f}(x))$
 
-\textbf{Softmax Transformation} 
+\textbf{Softmax} \qquad $\mathbb{P}[y = +1 | x] = \frac{1}{1 + e^{- \hat{f}(x)}}$
 
-\qquad \qquad $\mathbb{P}[y = +1 | x] = \frac{1}{1 + e^{- \hat{f}(x)}}$
-
-Multi-Class: $\hat{p}_k = \frac{e^{\hat{f}_k(x)}}{\sum_{i=1}^K e^{\hat{f}_j(x)}}$
+Multi-Class \ \ \ $\hat{p}_k = e^{\hat{f}_k(x)} / \sum_{i=1}^K e^{\hat{f}_j(x)}$
 
 \subsection*{Linear Classifiers}
 
 $f(x) = w^\top x$, the decision boundary $f(x) = 0$. \smallskip
 
-\textbf{Maximum-Margin Solution}:
+If data is lin. sep., grad. desc. converges to \textbf{Maximum-Margin Solution}: 
 
 \quad $w_\text{MM} = \text{argmax} \; \text{margin} (w) \; \text{with } ||w||_2 = 1$
 
-Where $\text{margin} (w) = \min_i w^\top x_i$.
+Where $\text{margin} (w) = \min_i y_i w^\top x_i$.
  
 \subsection*{Support Vector Machines}
 \textbf{Hard SVM}
